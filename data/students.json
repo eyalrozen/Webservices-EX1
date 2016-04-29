@@ -1,0 +1,37 @@
+{
+	"students" :[{
+		"name" : "Arik Benisti",
+		"id" : 201141414,
+		"age" : 25,
+		"department" : "electroinc_engineering",
+		"grades_avg" : 85
+	}, {
+		"name" : "Ben Biton",
+		"id" : 102232123,
+		"age" : 29,
+		"department" : "industrial_engineering",
+		"grades_avg" : 90
+	},
+	{
+		"name" : "Carl Melon",
+		"id" : 101147410,
+		"age" : 26,
+		"department" : "software_engineering",
+		"grades_avg" : 88
+	},
+	{
+		"name" : "Dana Zick",
+		"id" : 302232123,
+		"age" : 27,
+		"department" : "electronic_engineering",
+		"grades_avg" : 95
+	},
+	{
+		"name" : "Emily Frishman",
+		"id" : 123354741,
+		"age" : 28,
+		"department" : "software_engineering",
+		"grades_avg" : 86
+	}
+	]
+}
