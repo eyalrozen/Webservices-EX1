@@ -22,6 +22,23 @@ function CreateStudent(element)
 
 function GetAllStudents()
 {
+	var allStudentsList = '{"students" : [';
+	for(var i in studentsList)
+	{
+			allStudentsList += studentsList[i].PrintStudentDetails();
+			if(i != studentsList.Length-1)
+			{
+				allStudentsList +=',';
+			}
+		
+	}
+	allStudentsList += ' ]}';
+	var result = JSON.parse(allStudentsList);
+	return result;
+}
+
+function GetAllExcellenceStudents()
+{
 	var isFirstStudent = true;
 	var allStudentsList = '{"students" : [';
 	for(var i in studentsList)
@@ -71,26 +88,28 @@ function GetStudentsByDepartment(department_name)
 				allStudentsList += ',';
 			}
 			allStudentsList += studentsList[i].PrintStudentDetails();
+			studentsCount++;
 		}
 	}
 	allStudentsList += ' ]}';
 	var result =  JSON.parse(allStudentsList);
-	return result;
+	return result;	
 }
 
 exports.GetStudByDep = GetStudentsByDepartment;
 exports.GetAllStudents = GetAllStudents;
 exports.GetStudGradeByID = GetStudentGradeByID;
+exports.GetAllExcellenceStudents = GetAllExcellenceStudents;
 
 app.get('/',function(req,res){
 	res.json({'page':'main'});
 });
 app.get('/getAllExcellenceStudents',function(req,res){
-	var result = GetAllStudents();
+	var result = GetAllExcellenceStudents();
 	res.json(result);
 });
 
-app.get('/getStudentGrade/:stud_id',function(req,res){
+app.get('/getStudentGradeByID/:stud_id',function(req,res){
 	var studID = req.params.stud_id;
 	var studentGrade = GetStudentGradeByID(studID);
 	res.json(studentGrade);
@@ -100,6 +119,11 @@ app.get('/GetStudentsByDepartment/:department_name',function(req,res){
 	var depName = req.params.department_name;
 	var departmentStudents = GetStudentsByDepartment(depName);
 	res.json(departmentStudents);
+});
+
+app.get('/getAllStudents',function(req,res){
+	var result = GetAllStudents();
+	res.json(result);
 });
 
 Init();
