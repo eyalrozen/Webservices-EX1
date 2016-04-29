@@ -25,10 +25,12 @@ function GetAllStudents()
 	var allStudentsList = '{"students" : [';
 	for(var i in studentsList)
 	{
-		allStudentsList += studentsList[i].PrintStudentDetails();
-		if(i < studentsList.length-1)
-		{
-			allStudentsList += ',';
+		if(studentsList[i].grades_avg >= 90){
+			allStudentsList += studentsList[i].PrintStudentDetails();
+			if(i < studentsList.length-1)
+			{
+				allStudentsList += ',';
+			}
 		}
 	}
 	allStudentsList += ' ]}';
