@@ -57,15 +57,20 @@ function GetStudentGradeByID(stud_id)
 
 function GetStudentsByDepartment(department_name)
 {
+	var isFirstStudent = true;
 	var allStudentsList = '{"students" : [';
 	for(var i in studentsList)
 	{
 		if(studentsList[i].department == department_name){
-			allStudentsList += studentsList[i].PrintStudentDetails();
-			if(i < studentsList.length-1)
+			if(isFirstStudent)
+			{
+				isFirstStudent = false;
+			}
+			else
 			{
 				allStudentsList += ',';
 			}
+			allStudentsList += studentsList[i].PrintStudentDetails();
 		}
 	}
 	allStudentsList += ' ]}';
