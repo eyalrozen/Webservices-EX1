@@ -26,9 +26,9 @@ function GetAllStudents()
 	for(var i in studentsList)
 	{
 			allStudentsList += studentsList[i].PrintStudentDetails();
-			if(i != studentsList.Length-1)
+			if(i < studentsList.length-1)
 			{
-				allStudentsList +=',';
+				allStudentsList += ',';
 			}
 		
 	}
