@@ -88,7 +88,6 @@ function GetStudentsByDepartment(department_name)
 				allStudentsList += ',';
 			}
 			allStudentsList += studentsList[i].PrintStudentDetails();
-			studentsCount++;
 		}
 	}
 	allStudentsList += ' ]}';
