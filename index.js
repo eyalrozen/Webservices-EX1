@@ -1,2 +1,1 @@
-//var studentService = require('./studentService');
-console.log("This is test!!");
+var studentService = require('./studentService');
