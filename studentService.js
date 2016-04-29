@@ -70,7 +70,9 @@ exports.GetStudByDep = GetStudentsByDepartment;
 exports.GetAllStudents = GetAllStudents;
 exports.GetStudGradeByID = GetStudentGradeByID;
 
-
+app.get('/',function(req,res){
+	res.json({'page':'main'});
+});
 app.get('/getAllExcellenceStudents',function(req,res){
 	var result = GetAllStudents();
 	res.json(result);
