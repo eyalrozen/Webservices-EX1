@@ -11,7 +11,7 @@ module.exports = class Student {
 
 	PrintStudentDetails()
 	{
-		var stringresult = {"ID" : this.studentID,"name" : this.name , "age" : this.age , "department" : this.department, "grade" : this.grades_avg};
+		var stringresult = {"ID" : this.id,"name" : this.name , "age" : this.age , "department" : this.department, "grade" : this.grades_avg};
 		return JSON.stringify(stringresult);
 	}
 }
