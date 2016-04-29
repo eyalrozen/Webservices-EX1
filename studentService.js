@@ -22,15 +22,20 @@ function CreateStudent(element)
 
 function GetAllStudents()
 {
+	var isFirstStudent = true;
 	var allStudentsList = '{"students" : [';
 	for(var i in studentsList)
 	{
-		if(studentsList[i].grades_avg >= 90){
-			allStudentsList += studentsList[i].PrintStudentDetails();
-			if(i < studentsList.length-1)
+		if(studentsList[i].grades_avg >= 90) {	
+			if(isFirstStudent)
+			{
+				isFirstStudent = false;
+			}
+			else
 			{
 				allStudentsList += ',';
 			}
+			allStudentsList += studentsList[i].PrintStudentDetails();
 		}
 	}
 	allStudentsList += ' ]}';
