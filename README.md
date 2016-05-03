@@ -1,5 +1,26 @@
 # webservices-ex1
 https://students2409.herokuapp.com/getAllStudents //Return all students
+Response sample:
+```
+{
+students: [
+{
+ID: 201141414,
+name: "Arik Benisti",
+age: 25,
+department: "electronic_engineering",
+grade: 85
+},
+{
+ID: 102232123,
+name: "Ben Biton",
+age: 29,
+department: "industrial_engineering",
+grade: 90
+}
+]
+}
+```
 https://students2409.herokuapp.com/getAllExcellenceStudents                     //Return all excellence students (grade avg above 90)
 https://students2409.herokuapp.com/GetStudentsByDepartment/software_engineering //Return all the students that registered under software engineering department.
 
