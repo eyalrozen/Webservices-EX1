@@ -1,19 +1,15 @@
-'use strict';
+var mongoose = require('mongoose');
+var schema = mongoose.Schema;
+var userSchema = new schema({
+	name:{type:String,index:1,require:true},
+	id:Number,
+	age:Number,
+	department:{type:String,required:true},
+	grades_avg:Number
+	},{collection: 'students'});
 
-module.exports = class Student {
-	constructor(studentName,studentID,age,department,avg_grade){
-		this.name = studentName;
-		this.id = studentID;
-		this.age = age;
-		this.department = department;
-		this.grades_avg = avg_grade;
-	}
+var Student = mongoose.model('Student',userSchema);
 
-	PrintStudentDetails()
-	{
-		var stringresult = {"ID" : this.id,"name" : this.name , "age" : this.age , "department" : this.department, "grade" : this.grades_avg};
-		return JSON.stringify(stringresult);
-	}
-}
+module.exports = Student;
 
 
