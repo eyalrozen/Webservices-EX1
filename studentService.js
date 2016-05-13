@@ -30,7 +30,7 @@ app.get('/getAllStudents',function(req,res){
 		});
 });
 
-app.get('/getStudentGrade/:stud_id',function(req,res){
+app.get('/getStudentGradeByID/:stud_id',function(req,res){
 	var studentID = req.params.stud_id;
 	Student.find({'id':studentID},function(err, result){
 		if(err) throw err;
