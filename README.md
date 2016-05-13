@@ -1,5 +1,5 @@
 ## webservices-StudentService
-https://students2409.herokuapp.com/getAllStudent //Return all students
+https://students2409.herokuapp.com/getAllStudents //Return all students
 
 Response sample:
 ```
