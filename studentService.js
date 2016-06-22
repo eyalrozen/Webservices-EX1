@@ -7,7 +7,13 @@ var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
+app.use(function(req,res,next){
+	res.header("Access-Control-Allow-Origin","*");
+	res.header("Access-Control-Allow-Headers","Origin, X-Requested-With","Content-Type, Accept");
+	app.set('json spaces',4);
+	res.set("Content-Type","application/json");
+	next();
+});
 var conn = mongoose.connection;
 
 conn.on('error',function (err)
